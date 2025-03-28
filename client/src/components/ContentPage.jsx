@@ -32,13 +32,13 @@ function ContentPage() {
     return (
         <section className="w-full min-h-screen bg-gray-100 p-6">
             <div className="max-w-3xl mx-auto bg-white shadow-md rounded-lg p-4">
-                <div className="text-center text-lg font-semibold text-blue-600 mb-4">ค้นหาสถานที่</div>
+                <div className="text-center text-[2rem] text-blue-400 mb-4">เที่ยวไหนดี</div>
                 <input 
                     type="text"  
                     value={search}
                     onChange={handleSearch}
                     placeholder="หาที่เที่ยวแล้วไปกัน..."
-                    className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    className="w-full p-2 border-b border-gray-300 rounded-md focus:outline-none  text-center"
                 />
                 
                 <div className="mt-4 space-y-4">
@@ -48,7 +48,7 @@ function ContentPage() {
 
                                 <img src={loc.photos[0]} alt={loc.title} className="w-[300px]  object-cover rounded-md mb-2" />
                                 <div>
-                                <h3 className="text-lg font-semibold text-gray-800">{loc.title}</h3>
+                                <h3 className="text-lg font-semibold text-gray-800 mb-[10px]">{loc.title}</h3>
                                 <p className="text-gray-600 text-sm"><ReadMore text={loc.description}/></p>
                                 <p className="text-blue-500 text-xs mt-2">หมวด : {loc.tags.join(", ")}</p>
                                 <div className="mt-[20px] flex justify-evenly">
