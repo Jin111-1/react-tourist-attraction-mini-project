@@ -1,9 +1,13 @@
 import "./App.css";
+import ContentPage from "./components/ContentPage";
+
 
 function App() {
-  return <div className="text-3xl font-bold underline text-red-500">
-  Hello world!
-</div>;
+  return (
+  <div>
+    <ContentPage/>
+  </div>
+  )
 }
 
 export default App;
