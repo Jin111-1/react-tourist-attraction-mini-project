@@ -1,9 +1,8 @@
 import { useState } from "react";
 
-const ReadMore = ({ text, maxLength = 100 }) => {
+const ReadMore = ({ text, maxLength = 100, link }) => {
   const [isExpanded, setIsExpanded] = useState(false);
 
-  // ถ้าข้อความสั้นกว่าค่าที่กำหนด ให้แสดงทั้งหมดเลย
   if (text.length <= maxLength) {
     return <p>{text}</p>;
   }
@@ -11,11 +10,17 @@ const ReadMore = ({ text, maxLength = 100 }) => {
   return (
     <p>
       {isExpanded ? text : text.slice(0, maxLength) + "... "}
-      <button onClick={() => setIsExpanded(!isExpanded)} className="font-semibold text-blue-600 cursor-pointer" >
-        {isExpanded ? "อ่านน้อยลง" : "อ่านเพิ่มเติม"}
-      </button>
+      {link ? (
+        <a href={link} target="_blank" rel="noopener noreferrer" className="font-semibold text-blue-600">
+          อ่านเพิ่มเติม
+        </a>
+      ) : (
+        <button onClick={() => setIsExpanded(!isExpanded)} className="font-semibold text-blue-600">
+          {isExpanded ? "อ่านน้อยลง" : "อ่านเพิ่มเติม"}
+        </button>
+      )}
     </p>
   );
 };
-export default ReadMore 
 
+export default ReadMore;

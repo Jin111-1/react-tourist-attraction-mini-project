@@ -49,7 +49,7 @@ function ContentPage() {
                                 <img src={loc.photos[0]} alt={loc.title} className="w-[300px]  object-cover rounded-md mb-2" />
                                 <div>
                                 <h3 className="text-lg font-semibold text-gray-800 mb-[10px]">{loc.title}</h3>
-                                <p className="text-gray-600 text-sm"><ReadMore text={loc.description}/></p>
+                                <p className="text-gray-600 text-sm"><ReadMore text={loc.description} link={loc.url} /></p>
                                 <p className="text-blue-500 text-xs mt-2">หมวด : {loc.tags.join(", ")}</p>
                                 <div className="mt-[20px] flex justify-evenly">
                                 <img src={loc.photos[1]} className="w-[100px] object-cover rounded-md mb-2" />
